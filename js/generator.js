@@ -74,7 +74,7 @@ function construirHTML(datos) {
   let horariosHTML = '';
   let linkHorarios = '';
   if (datos.modHorariosActive) {
-    linkHorarios = `<a href="#horarios" class="nav-link  hover:text-slate-900">Horarios</a>`;
+    linkHorarios = `<a href="#horarios" class="nav-link hover:text-slate-900">Horarios</a>`;
 
     let contenidoHorario = '';
     if (datos.horariosModo === 'diario') {
@@ -206,212 +206,384 @@ function construirHTML(datos) {
   const mapEncoded = encodeURIComponent(datos.mapQuery || datos.ubicacion || '');
   const mapIframeUrl = `https://maps.google.com/maps?q=${mapEncoded}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
-  return `<!DOCTYPE html>
+  // Versiones para móviles usando directamente las mismas variables de enlaces de PC (con estilo block)
+  const mobileLinkHorarios = linkHorarios ? `<a href="#horarios" class="nav-link block font-bold text-slate-700">Horarios</a>` : '';
+  const mobileLinkGaleria = linkGaleria ? `<a href="#galeria" class="nav-link block font-bold text-slate-700">Galería</a>` : '';
+  const mobileLinkRedes = linkRedes ? `<a href="#redes" class="nav-link block font-bold text-slate-700">Redes</a>` : '';
+
+  return `<!doctype html>
 <html lang="es" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${datos.nombre} | ${datos.categoria}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    .scroll-anim {
-      opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      will-change: opacity, transform;
-    }
-    .scroll-anim[data-animate="fade-up"] { transform: translateY(30px); }
-    .scroll-anim[data-animate="zoom-in"] { transform: scale(0.92); }
-    .scroll-anim[data-animate="slide-left"] { transform: translateX(-40px); }
-    .scroll-anim[data-animate="slide-right"] { transform: translateX(40px); }
-    .scroll-anim[data-animate="bounce"] { transform: scale(0.85); }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${datos.nombre} | ${datos.categoria}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      .scroll-anim {
+        opacity: 0;
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .scroll-anim[data-animate="fade-up"] {
+        transform: translateY(30px);
+      }
+      .scroll-anim[data-animate="zoom-in"] {
+        transform: scale(0.92);
+      }
+      .scroll-anim[data-animate="slide-left"] {
+        transform: translateX(-40px);
+      }
+      .scroll-anim[data-animate="slide-right"] {
+        transform: translateX(40px);
+      }
+      .scroll-anim[data-animate="bounce"] {
+        transform: scale(0.85);
+      }
 
-    .scroll-anim.animated {
-      opacity: 1;
-      transform: translateY(0) translateX(0) scale(1) !important;
-    }
-    
-    .scroll-anim[data-animate="bounce"].animated {
-      animation: smoothBounce 0.7s ease-out forwards;
-    }
+      .scroll-anim.animated {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1) !important;
+      }
 
-    @keyframes smoothBounce {
-      0% { opacity: 0; transform: scale(0.8); }
-      60% { opacity: 1; transform: scale(1.04); }
-      85% { transform: scale(0.98); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-  </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white px-2 sm:px-4 md:px-8 py-4">
+      .scroll-anim[data-animate="bounce"].animated {
+        animation: smoothBounce 0.7s ease-out forwards;
+      }
 
-  ${bannerTopHTML}
+      @keyframes smoothBounce {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        60% {
+          opacity: 1;
+          transform: scale(1.04);
+        }
+        85% {
+          transform: scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white px-2 sm:px-4 md:px-8 py-4"
+  >
+    ${bannerTopHTML}
 
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm rounded-2xl">
-    <div class="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-      <a href="#inicio" class="nav-link text-xl font-black text-slate-900 flex items-center gap-2">
-        ${datos.nombre}
-      </a>
-      
-      <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-        <a href="#inicio" class="nav-link hover:text-slate-900">Inicio</a>
-        <a href="#servicios" class="nav-link hover:text-slate-900">Servicios</a>
-        ${linkHorarios}
-        ${linkGaleria}
-        ${linkRedes}
-        <a href="#contacto" class="nav-link hover:text-slate-900">Ubicación</a>
-      </div>
+    <nav
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm rounded-2xl"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#inicio"
+          class="nav-link text-xl font-black text-slate-900 flex items-center gap-2"
+        >
+          ${datos.nombre}
+        </a>
 
-      <a href="${waUrl}" target="_blank" class="hidden md:flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg text-xs md:text-sm transition-transform hover:scale-105" style="background-color: ${datos.btnNavColor || '#25D366'}">
-        <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
-      </a>
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600"
+        >
+          <a href="#inicio" class="nav-link hover:text-slate-900">Inicio</a>
+          <a href="#servicios" class="nav-link hover:text-slate-900"
+            >Servicios</a
+          >
+          ${linkHorarios} ${linkGaleria} ${linkRedes}
+          <a href="#contacto" class="nav-link hover:text-slate-900"
+            >Ubicación</a
+          >
+        </div>
 
-      <button id="mobileMenuBtn" type="button" class="md:hidden text-slate-800 p-2 text-xl"><i class="fa-solid fa-bars"></i></button>
-    </div>
-
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-4">
-      <a href="#inicio" class="nav-link block font-bold text-slate-700">Inicio</a>
-      <a href="#servicios" class="nav-link block font-bold text-slate-700">Servicios</a>
-      ${linkHorarios}
-      ${linkGaleria}
-      ${linkRedes}
-      <a href="#contacto" class="nav-link block font-bold text-slate-700">Ubicación</a>
-      <div class="pt-2 border-t border-slate-100">
-        <a href="${waUrl}" target="_blank" class="flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-xl shadow-md text-sm w-full" style="background-color: ${datos.btnNavColor || '#25D366'}">
+        <a
+          href="${waUrl}"
+          target="_blank"
+          class="hidden md:flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg text-xs md:text-sm transition-transform hover:scale-105"
+          style="background-color: ${datos.btnNavColor || '#25D366'}"
+        >
           <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
         </a>
+
+        <button
+          id="mobileMenuBtn"
+          type="button"
+          class="md:hidden text-slate-800 p-2 text-xl"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-    </div>
-  </nav>
 
-  <header id="inicio" ${getAnimData(datos.animHero)} class="relative min-h-[580px] flex items-center justify-center px-6 md:px-12 py-24 bg-slate-900 overflow-hidden rounded-3xl my-4">
-    <div class="absolute inset-0 z-0">
-      <img src="${datos.heroBgUrl}" alt="Portada" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px]"></div>
-    </div>
-    <div class="max-w-4xl mx-auto relative z-10 space-y-6 ${alignTextClass}">
-      <span class="inline-block uppercase tracking-widest text-xs font-extrabold text-white bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">${datos.categoria}</span>
-      <h1 class="text-4xl md:text-6xl font-black leading-tight" style="color: ${datos.colorTitle}">${datos.tituloHero}</h1>
-      <p class="text-base md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed">${datos.descripcion}</p>
-      <div class="pt-6 pb-4 flex flex-wrap gap-4 ${datos.btnAlign}">
-        <a href="${waUrl}" target="_blank" class="text-white font-extrabold px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-2 transition-transform hover:scale-105" style="background-color: ${datos.btnHero1Color}">
-          ${renderIcon(datos.btnHero1Icon)} <span>${datos.btnHero1Text}</span>
-        </a>
-        <a href="#servicios" class="nav-link text-white border border-white/30 backdrop-blur-md font-bold px-7 py-4 rounded-2xl flex items-center gap-2 transition-all hover:bg-white/10" style="background-color: ${datos.btnHero2Color}">
-          <span>${datos.btnHero2Text}</span> ${renderIcon(datos.btnHero2Icon)}
-        </a>
-      </div>
-    </div>
-  </header>
-
-  ${statsHTML}
-
-  <section id="servicios" ${getAnimData(datos.animServicios)} class="max-w-6xl  mx-auto px-6 md:px-12 py-20 my-6">
-    <h2 class="text-3xl md:text-4xl font-black text-center mt-3 text-slate-900 mb-3">${datos.serviciosTitulo || 'Nuestros Servicios'}</h2>
-    <p class="text-center text-slate-500 text-sm mb-12 max-w-xl mx-auto leading-relaxed">${datos.serviciosSubtitulo || ''}</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      ${tarjetasServicios}
-    </div>
-  </section>
-
-  ${horariosHTML}
-  ${galeriaHTML}
-  ${testimoniosHTML}
-  ${faqHTML}
-  ${redesSeccionHTML}
-
-  <section id="contacto" class="bg-slate-100 py-20 px-6 md:px-12 my-12 border-t border-slate-200 rounded-3xl">
-    <div class="max-w-6xl mx-auto space-y-10">
-      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="space-y-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Contacto</span>
-          <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">${datos.nombre}</h3>
-          <p class="text-sm text-slate-600 font-medium">📍 ${datos.ubicacion} | 📞 ${datos.telefono}</p>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-4"
+      >
+        <a href="#inicio" class="nav-link block font-bold text-slate-700"
+          >Inicio</a
+        >
+        <a href="#servicios" class="nav-link block font-bold text-slate-700"
+          >Servicios</a
+        >
+        ${mobileLinkHorarios}
+        ${mobileLinkGaleria}
+        ${mobileLinkRedes}
+        <a href="#contacto" class="nav-link block font-bold text-slate-700"
+          >Ubicación</a
+        >
+        <div class="pt-2 border-t border-slate-100">
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-xl shadow-md text-sm w-full"
+            style="background-color: ${datos.btnNavColor || '#25D366'}"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
+          </a>
         </div>
-        <a href="${waUrl}" target="_blank" class="text-white font-bold px-8 py-4 rounded-2xl shadow-lg flex items-center gap-2 transition-transform hover:scale-105" style="background-color: ${datos.btnNavColor || '#25D366'}"><i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp</a>
       </div>
-      <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 h-96">
-        <iframe width="100%" height="100%" frameborder="0" src="${mapIframeUrl}"></iframe>
+    </nav>
+
+    <header
+      id="inicio"
+      ${getAnimData(datos.animHero)}
+      class="relative min-h-[580px] flex items-center justify-center px-6 md:px-12 py-24 bg-slate-900 overflow-hidden rounded-3xl my-4"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="${datos.heroBgUrl}"
+          alt="Portada"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px]"></div>
       </div>
+      <div class="max-w-4xl mx-auto relative z-10 space-y-6 ${alignTextClass}">
+        <span
+          class="inline-block uppercase tracking-widest text-xs font-extrabold text-white bg-white/10 border border-white/20 px-4 py-1.5 rounded-full"
+          >${datos.categoria}</span
+        >
+        <h1
+          class="text-4xl md:text-6xl font-black leading-tight"
+          style="color: ${datos.colorTitle}"
+        >
+          ${datos.tituloHero}
+        </h1>
+        <p
+          class="text-base md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed"
+        >
+          ${datos.descripcion}
+        </p>
+        <div class="pt-6 pb-4 flex flex-wrap gap-4 ${datos.btnAlign}">
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="text-white font-extrabold px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-2 transition-transform hover:scale-105"
+            style="background-color: ${datos.btnHero1Color}"
+          >
+            ${renderIcon(datos.btnHero1Icon)} <span>${datos.btnHero1Text}</span>
+          </a>
+          <a
+            href="#servicios"
+            class="nav-link text-white border border-white/30 backdrop-blur-md font-bold px-7 py-4 rounded-2xl flex items-center gap-2 transition-all hover:bg-white/10"
+            style="background-color: ${datos.btnHero2Color}"
+          >
+            <span>${datos.btnHero2Text}</span> ${renderIcon(datos.btnHero2Icon)}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    ${statsHTML}
+
+    <section
+      id="servicios"
+      ${getAnimData(datos.animServicios)}
+      class="max-w-6xl mx-auto px-6 md:px-12 py-20 my-6"
+    >
+      <h2
+        class="text-3xl md:text-4xl font-black text-center mt-3 text-slate-900 mb-3"
+      >
+        ${datos.serviciosTitulo || 'Nuestros Servicios'}
+      </h2>
+      <p
+        class="text-center text-slate-500 text-sm mb-12 max-w-xl mx-auto leading-relaxed"
+      >
+        ${datos.serviciosSubtitulo || ''}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        ${tarjetasServicios}
+      </div>
+    </section>
+
+    ${horariosHTML} ${galeriaHTML} ${testimoniosHTML} ${faqHTML}
+    ${redesSeccionHTML}
+
+    <section
+      id="contacto"
+      class="bg-slate-100 py-20 px-6 md:px-12 my-12 border-t border-slate-200 rounded-3xl"
+    >
+      <div class="max-w-6xl mx-auto space-y-10">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200"
+              >Contacto</span
+            >
+            <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">
+              ${datos.nombre}
+            </h3>
+            <p class="text-sm text-slate-600 font-medium">
+              📍 ${datos.ubicacion} | 📞 ${datos.telefono}
+            </p>
+          </div>
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="text-white font-bold px-8 py-4 rounded-2xl shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
+            style="background-color: ${datos.btnNavColor || '#25D366'}"
+            ><i class="fa-brands fa-whatsapp text-lg"></i> Contactar por
+            WhatsApp</a
+          >
+        </div>
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 h-96"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            src="${mapIframeUrl}"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-slate-900 text-slate-400 py-12 px-6 md:px-12 text-center text-xs space-y-3 rounded-2xl my-4"
+    >
+      <p class="font-semibold text-slate-300">
+        &copy; ${new Date().getFullYear()} ${datos.nombre}. Todos los derechos
+        reservados.
+      </p>
+      <p class="text-slate-500">📍 ${datos.ubicacion} | 📞 ${datos.telefono}</p>
+    </footer>
+
+    <div
+      id="galleryModal"
+      class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+    >
+      <button
+        id="closeModal"
+        class="absolute top-6 right-6 text-white text-3xl font-bold cursor-pointer"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img
+        id="modalImg"
+        src=""
+        class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+      />
     </div>
-  </section>
 
-  <footer class="bg-slate-900 text-slate-400 py-12 px-6 md:px-12 text-center text-xs space-y-3 rounded-2xl my-4">
-    <p class="font-semibold text-slate-300">&copy; ${new Date().getFullYear()} ${datos.nombre}. Todos los derechos reservados.</p>
-    <p class="text-slate-500">📍 ${datos.ubicacion} | 📞 ${datos.telefono}</p>
-  </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-anim");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animated");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
 
-  <div id="galleryModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
-    <button id="closeModal" class="absolute top-6 right-6 text-white text-3xl font-bold cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
-    <img id="modalImg" src="" class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain">
-  </div>
+        elements.forEach((el) => observer.observe(el));
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const elements = document.querySelectorAll('.scroll-anim');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            observer.unobserve(entry.target);
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+            const icon = mobileMenuBtn.querySelector("i");
+            if (icon) {
+              if (mobileMenu.classList.contains("hidden")) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+              } else {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+              }
+            }
+          });
+        }
+
+        document.addEventListener("click", function (e) {
+          const link = e.target.closest(".nav-link");
+          if (link) {
+            const href = link.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              e.preventDefault();
+              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+                if (mobileMenuBtn) {
+                  const icon = mobileMenuBtn.querySelector("i");
+                  if (icon) {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+                  }
+                }
+              }
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }
           }
         });
-      }, { threshold: 0.15 });
 
-      elements.forEach(el => observer.observe(el));
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeModal = document.getElementById("closeModal");
 
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
-      }
-
-      document.addEventListener('click', function(e) {
-        const link = e.target.closest('.nav-link');
-        if (link) {
-          const href = link.getAttribute('href');
-          if (href && href.startsWith('#')) {
-            e.preventDefault();
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-              mobileMenu.classList.add('hidden');
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            const fullUrl = this.getAttribute("data-full");
+            if (modal && modalImg && fullUrl) {
+              modalImg.src = fullUrl;
+              modal.classList.remove("hidden");
+              modal.classList.add("flex");
             }
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+
+        if (closeModal && modal) {
+          closeModal.addEventListener("click", function () {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+              modal.classList.add("hidden");
+              modal.classList.remove("flex");
             }
-          }
+          });
         }
       });
-
-      const modal = document.getElementById('galleryModal');
-      const modalImg = document.getElementById('modalImg');
-      const closeModal = document.getElementById('closeModal');
-
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('click', function() {
-          const fullUrl = this.getAttribute('data-full');
-          if (modal && modalImg && fullUrl) {
-            modalImg.src = fullUrl;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-          }
-        });
-      });
-
-      if (closeModal && modal) {
-        closeModal.addEventListener('click', function() {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-        });
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-          }
-        });
-      }
-    });
-  </script>
-</body>
-</html>`;
+    </script>
+  </body>
+</html>
+`;
 }
