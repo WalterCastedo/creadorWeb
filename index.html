@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CreadorWeb Pro v10 Ultimate</title>
+    <title>CreadorWeb Pro v24 Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link
@@ -12,50 +12,48 @@
     />
   </head>
   <body
-    class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans overflow-x-hidden"
+    class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans overflow-x-hidden antialiased"
   >
-    <!-- Header Superior -->
     <header
-      class="bg-slate-800 border-b border-slate-700 px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3 sticky top-0 z-50"
+      class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 py-3.5 flex flex-wrap justify-between items-center gap-4 sticky top-0 z-50"
     >
       <div class="flex items-center gap-3">
         <div
-          class="bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 text-slate-950 p-2 rounded-xl font-black text-xl shadow-lg"
+          class="bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 text-slate-950 p-2.5 rounded-xl font-black text-xl shadow-lg shadow-emerald-500/20"
         >
-          <i class="fa-solid fa-gem"></i>
+          <i class="fa-solid fa-crown"></i>
         </div>
         <div>
           <h1
-            class="text-lg sm:text-xl font-extrabold tracking-tight flex items-center gap-2"
+            class="text-lg sm:text-xl font-black tracking-tight flex items-center gap-2"
           >
             CreadorWeb Pro
             <span
               class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-              >v10 Pro</span
+              >v24 Perfect Spacing</span
             >
           </h1>
           <p class="text-[11px] sm:text-xs text-slate-400 hidden sm:block">
-            Horarios Flexibles por Día, Lightbox Modal de Fotos & Navegación
-            Suave
+            Paddings Holgados, Separación Perfecta & Sin Cierre en Bordes
           </p>
         </div>
       </div>
 
       <div class="flex items-center gap-2">
         <div
-          class="lg:hidden flex bg-slate-900 p-1 rounded-xl border border-slate-700"
+          class="lg:hidden flex bg-slate-900 p-1 rounded-xl border border-slate-800"
         >
           <button
             type="button"
             id="tabEditor"
-            class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 flex items-center gap-1.5"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 flex items-center gap-1.5 transition-all shadow"
           >
             <i class="fa-solid fa-pen-to-square"></i> Editor
           </button>
           <button
             type="button"
             id="tabPreview"
-            class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5 transition-all"
           >
             <i class="fa-solid fa-eye"></i> Preview
           </button>
@@ -63,45 +61,110 @@
 
         <button
           id="btnExport"
-          class="hidden bg-emerald-500 text-slate-950 font-black px-4 py-2 rounded-xl text-xs"
+          class="hidden bg-emerald-500 text-slate-950 font-black px-4 py-2 rounded-xl text-xs shadow-lg"
         >
           Descargar index.html
         </button>
       </div>
     </header>
 
-    <!-- Content Layout -->
     <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-0 relative">
-      <!-- Panel Editor -->
       <section
         id="panelEditor"
-        class="lg:col-span-5 bg-slate-800/40 p-4 sm:p-6 border-r border-slate-700/80 overflow-y-auto max-h-[calc(100vh-65px)] space-y-6 block"
+        class="lg:col-span-5 bg-slate-900/60 p-4 sm:p-6 border-r border-slate-800/80 overflow-y-auto max-h-[calc(100vh-68px)] space-y-6 block"
       >
         <form
           id="builderForm"
           onsubmit="event.preventDefault()"
           class="space-y-6"
         >
-          <!-- Identidad -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-bullhorn"></i> Banner Anuncio Top
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modBannerActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+
+            <div id="bannerConfig" class="space-y-3">
+              <div>
+                <label
+                  class="block text-[11px] font-semibold text-slate-300 mb-1"
+                  >Texto del Anuncio Promocional</label
+                >
+                <input
+                  type="text"
+                  id="bannerTexto"
+                  value="🔥 ¡20% DE DESCUENTO EN TU PRIMER PEDIDO ONLINE! CÓDIGO: PROMO20"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-emerald-500 focus:outline-none"
+                />
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label
+                    class="block text-[11px] font-semibold text-slate-300 mb-1"
+                    >Fondo del Banner</label
+                  >
+                  <input
+                    type="color"
+                    id="bannerBgColor"
+                    value="#e11d48"
+                    class="w-full h-9 bg-slate-950 border border-slate-800 rounded-xl p-1 cursor-pointer"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[11px] font-semibold text-slate-300 mb-1"
+                    >Color de Texto</label
+                  >
+                  <input
+                    type="color"
+                    id="bannerTextColor"
+                    value="#ffffff"
+                    class="w-full h-9 bg-slate-950 border border-slate-800 rounded-xl p-1 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <h2
-              class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
             >
               <i class="fa-solid fa-compass"></i> Menú Superior (Navbar)
             </h2>
+
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1"
-                >Nombre del Negocio</label
+                >Nombre del Negocio / Marca</label
               >
               <input
                 type="text"
                 id="nombre"
                 value="Napoletana Gourmet"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
               />
             </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-1"
@@ -111,7 +174,7 @@
                   type="text"
                   id="categoria"
                   value="Pizzería Artesanal"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
                 />
               </div>
               <div>
@@ -122,53 +185,37 @@
                   type="text"
                   id="telefono"
                   value="+591 70000000"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
                 />
               </div>
             </div>
-            <div class="space-y-2 pt-2 border-t border-slate-700/60">
+
+            <div class="space-y-2 pt-2 border-t border-slate-800">
               <label class="block text-xs font-semibold text-slate-300"
-                >Botón de Menú</label
+                >Color del Botón WhatsApp en Menú</label
               >
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <div class="flex gap-2 items-center">
                 <input
                   type="color"
                   id="btnNavColor"
-                  value="#10b981"
-                  class="w-full h-9 bg-slate-900 border border-slate-700 rounded-lg p-1 cursor-pointer"
+                  value="#25D366"
+                  class="w-12 h-9 bg-slate-950 border border-slate-800 rounded-xl p-1 cursor-pointer"
                 />
-                <input
-                  type="text"
-                  id="btnNavText"
-                  value="Pedir por WhatsApp"
-                  class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
-                />
+                <span
+                  class="text-xs text-slate-300 font-bold bg-slate-950 border border-slate-800 px-3.5 py-2 rounded-xl flex-1 text-center"
+                  >Botón WhatsApp Activo</span
+                >
               </div>
-              <select
-                id="btnNavIcon"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
-              >
-                <option value="fa-brands fa-whatsapp">
-                  WhatsApp (Logo Verde)
-                </option>
-                <option value="fa-solid fa-phone">Teléfono (Llamada)</option>
-                <option value="fa-solid fa-cart-shopping">
-                  Carrito de Compras
-                </option>
-                <option value="fa-solid fa-star">Estrella</option>
-                <option value="none">Sin Ícono</option>
-              </select>
             </div>
           </div>
 
-          <!-- Portada -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <h2
-              class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
             >
-              <i class="fa-solid fa-align-center"></i> Portada (Hero) & Posición
+              <i class="fa-solid fa-align-center"></i> Portada Principal (Hero)
             </h2>
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1"
@@ -178,7 +225,7 @@
                 type="text"
                 id="tituloHero"
                 value="La Auténtica Pizza Napolitana al Horno de Leña"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
               />
             </div>
             <div>
@@ -188,11 +235,12 @@
               <textarea
                 id="descripcion"
                 rows="2"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
               >
 Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
               >
             </div>
+
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-1"
@@ -200,7 +248,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                 >
                 <select
                   id="heroAlign"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:border-emerald-500 focus:outline-none"
                 >
                   <option value="center">Centrado</option>
                   <option value="left">Izquierda</option>
@@ -213,7 +261,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                 >
                 <select
                   id="btnAlign"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:border-emerald-500 focus:outline-none"
                 >
                   <option value="justify-center">Centro</option>
                   <option value="justify-start">Izquierda</option>
@@ -221,17 +269,195 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                 </select>
               </div>
             </div>
+
+            <div class="space-y-2 pt-2 border-t border-slate-800">
+              <span class="text-[11px] font-bold text-slate-400 uppercase block"
+                >Botón Principal (CTA 1)</span
+              >
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <input
+                  type="color"
+                  id="btnHero1Color"
+                  value="#e11d48"
+                  class="w-full h-8 bg-slate-950 border border-slate-800 rounded-lg p-1 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  id="btnHero1Text"
+                  value="Ordenar Ahora"
+                  class="sm:col-span-2 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+              <select
+                id="btnHero1Icon"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+              >
+                <option value="fa-solid fa-fire">Fuego / Oferta</option>
+                <option value="fa-brands fa-whatsapp">WhatsApp</option>
+                <option value="fa-solid fa-bag-shopping">
+                  Bolsa de Compras
+                </option>
+                <option value="none">Sin Ícono</option>
+              </select>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-slate-800">
+              <span class="text-[11px] font-bold text-slate-400 uppercase block"
+                >Botón Secundario (CTA 2)</span
+              >
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <input
+                  type="color"
+                  id="btnHero2Color"
+                  value="#334155"
+                  class="w-full h-8 bg-slate-950 border border-slate-800 rounded-lg p-1 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  id="btnHero2Text"
+                  value="Ver Servicios"
+                  class="sm:col-span-2 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+              <select
+                id="btnHero2Icon"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+              >
+                <option value="fa-solid fa-chevron-down">Flecha Abajo</option>
+                <option value="fa-solid fa-list">Lista</option>
+                <option value="none">Sin Ícono</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1"
+                >Imagen de Fondo (URL o Subir)</label
+              >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  id="heroBgUrl"
+                  value="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+                  class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white"
+                />
+                <label
+                  class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-xl cursor-pointer flex items-center gap-1.5 border border-slate-700"
+                >
+                  <i class="fa-solid fa-upload"></i>
+                  <input
+                    type="file"
+                    id="heroBgFile"
+                    accept="image/*"
+                    class="hidden"
+                  />
+                </label>
+              </div>
+            </div>
           </div>
 
-          <!-- MÓDULO HORARIOS DE ATENCIÓN (Modo Rangos vs Día por Día) -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <div
-              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
             >
               <h2
-                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-award"></i> Beneficios y Métricas Clave
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modStatsActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+
+            <div id="statsConfig" class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-slate-300 font-semibold"
+                  >Cajas Destacadas</span
+                >
+                <button
+                  id="btnAddStat"
+                  type="button"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg hover:bg-emerald-500/30 transition-all font-bold"
+                >
+                  + Agregar
+                </button>
+              </div>
+              <div id="statsContainer" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-layer-group"></i> Módulo: Servicios /
+                Catálogo
+              </h2>
+            </div>
+            <div class="space-y-2">
+              <div>
+                <label
+                  class="block text-[11px] font-semibold text-slate-300 mb-1"
+                  >Título de Sección</label
+                >
+                <input
+                  type="text"
+                  id="serviciosTitulo"
+                  value="Nuestros Servicios Destacados"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[11px] font-semibold text-slate-300 mb-1"
+                  >Subtítulo Descriptivo</label
+                >
+                <input
+                  type="text"
+                  id="serviciosSubtitulo"
+                  value="Variedad, frescura y sabor artesanal en cada preparación."
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-xs font-bold text-slate-300"
+                >Lista de Tarjetas</span
+              >
+              <button
+                id="btnAddService"
+                type="button"
+                class="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold px-2.5 py-1 rounded-lg hover:bg-emerald-500/30 transition-all"
+              >
+                + Servicio
+              </button>
+            </div>
+            <div id="servicesContainer" class="space-y-4"></div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
               >
                 <i class="fa-solid fa-clock"></i> Módulo: Horarios de Atención
               </h2>
@@ -243,7 +469,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   class="sr-only peer"
                 />
                 <div
-                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
                 ></div>
               </label>
             </div>
@@ -259,17 +485,17 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                     type="text"
                     id="horariosTitulo"
                     value="Horarios de Atención"
-                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
                   />
                 </div>
                 <div>
                   <label
                     class="block text-[10px] font-semibold text-slate-300 mb-1"
-                    >Modo de Horario</label
+                    >Modo de Distribución</label
                   >
                   <select
                     id="horariosModo"
-                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-2 py-1.5 text-xs text-white"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2 py-1.5 text-xs text-white"
                   >
                     <option value="rangos">Rangos (LV y SD)</option>
                     <option value="diario">Detallado Día por Día</option>
@@ -286,7 +512,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                     type="text"
                     id="horariosLV"
                     value="11:30 AM - 23:00 PM"
-                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
                   />
                 </div>
                 <div>
@@ -297,18 +523,18 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                     type="text"
                     id="horariosSD"
                     value="12:00 PM - 00:00 AM"
-                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
                   />
                 </div>
               </div>
 
               <div
                 id="horariosDiarioBox"
-                class="hidden space-y-2 pt-1 border-t border-slate-700/50"
+                class="hidden space-y-2 pt-1 border-t border-slate-800"
               >
                 <span
                   class="text-[10px] font-bold text-emerald-400 uppercase block"
-                  >Configuración Día por Día</span
+                  >Horarios Individuales por Día</span
                 >
                 <div class="grid grid-cols-2 gap-2 text-xs">
                   <div>
@@ -317,7 +543,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_lunes"
                       value="11:30 AM - 22:00 PM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div>
@@ -326,7 +552,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_martes"
                       value="11:30 AM - 22:00 PM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div>
@@ -335,7 +561,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_miercoles"
                       value="11:30 AM - 22:00 PM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div>
@@ -344,7 +570,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_jueves"
                       value="11:30 AM - 23:00 PM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div>
@@ -353,7 +579,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_viernes"
                       value="11:30 AM - 00:00 AM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div>
@@ -362,7 +588,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_sabado"
                       value="12:00 PM - 00:00 AM"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                   <div class="col-span-2">
@@ -371,7 +597,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                       type="text"
                       id="h_domingo"
                       value="Cerrado"
-                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-white"
                     />
                   </div>
                 </div>
@@ -379,15 +605,14 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             </div>
           </div>
 
-          <!-- MÓDULO GALERÍA DE FOTOS CON MODAL -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <div
-              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
             >
               <h2
-                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
               >
                 <i class="fa-solid fa-images"></i> Módulo: Galería de Fotos
               </h2>
@@ -399,19 +624,45 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   class="sr-only peer"
                 />
                 <div
-                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
                 ></div>
               </label>
             </div>
-            <div id="galeriaConfig" class="space-y-3">
+            <div class="space-y-2">
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Título de Galería</label
+                >
+                <input
+                  type="text"
+                  id="galeriaTitulo"
+                  value="Galería de Fotos"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Subtítulo</label
+                >
+                <input
+                  type="text"
+                  id="galeriaSubtitulo"
+                  value="Haz clic en cualquier imagen para verla en pantalla completa."
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+            </div>
+            <div id="galeriaConfig" class="space-y-3 pt-2">
               <div class="flex justify-between items-center">
                 <span class="text-xs text-slate-300 font-semibold"
-                  >Imágenes (Click abre visor Modal)</span
+                  >Lista de Imágenes</span
                 >
                 <button
                   id="btnAddGaleriaImg"
                   type="button"
-                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg hover:bg-emerald-500/30 transition-all font-bold"
                 >
                   + Foto
                 </button>
@@ -420,15 +671,14 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             </div>
           </div>
 
-          <!-- MÓDULO TESTIMONIOS -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <div
-              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
             >
               <h2
-                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
               >
                 <i class="fa-solid fa-comments"></i> Módulo: Testimonios
               </h2>
@@ -440,19 +690,30 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   class="sr-only peer"
                 />
                 <div
-                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
                 ></div>
               </label>
             </div>
-            <div id="testimoniosConfig" class="space-y-3">
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-300 mb-1"
+                >Título de Sección</label
+              >
+              <input
+                type="text"
+                id="testimoniosTitulo"
+                value="Opiniones de Clientes"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+              />
+            </div>
+            <div id="testimoniosConfig" class="space-y-3 pt-2">
               <div class="flex justify-between items-center">
                 <span class="text-xs text-slate-300 font-semibold"
-                  >Opiniones</span
+                  >Lista de Opiniones</span
                 >
                 <button
                   id="btnAddTestimonio"
                   type="button"
-                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg hover:bg-emerald-500/30 transition-all font-bold"
                 >
                   + Opinión
                 </button>
@@ -461,15 +722,14 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             </div>
           </div>
 
-          <!-- MÓDULO FAQ -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <div
-              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
             >
               <h2
-                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
               >
                 <i class="fa-solid fa-circle-question"></i> Módulo: FAQ
               </h2>
@@ -481,19 +741,30 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   class="sr-only peer"
                 />
                 <div
-                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
                 ></div>
               </label>
             </div>
-            <div id="faqConfig" class="space-y-3">
+            <div>
+              <label class="block text-[10px] font-semibold text-slate-300 mb-1"
+                >Título de FAQ</label
+              >
+              <input
+                type="text"
+                id="faqTitulo"
+                value="Preguntas Frecuentes"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+              />
+            </div>
+            <div id="faqConfig" class="space-y-3 pt-2">
               <div class="flex justify-between items-center">
                 <span class="text-xs text-slate-300 font-semibold"
-                  >Preguntas</span
+                  >Preguntas y Respuestas</span
                 >
                 <button
                   id="btnAddFaq"
                   type="button"
-                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-lg hover:bg-emerald-500/30 transition-all font-bold"
                 >
                   + Pregunta
                 </button>
@@ -502,14 +773,140 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             </div>
           </div>
 
-          <!-- Estilos Visuales -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-800 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Sección: Redes Sociales
+                (Al Final)
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modRedesActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-800 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+
+            <div id="redesConfig" class="space-y-3">
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Título de la Sección</label
+                >
+                <input
+                  type="text"
+                  id="redesTitulo"
+                  value="Síguenos en Redes Sociales"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Subtítulo Descriptivo</label
+                >
+                <textarea
+                  id="redesSubtitulo"
+                  rows="2"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                >
+Conéctate con nosotros para no perderte nuestras novedades y ofertas exclusivas.</textarea
+                >
+              </div>
+
+              <div class="space-y-2 pt-2 border-t border-slate-800">
+                <span
+                  class="text-[10px] font-bold text-slate-400 uppercase block"
+                  >Enlaces de Perfiles</span
+                >
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-0.5 flex items-center gap-1.5"
+                    ><i class="fa-brands fa-facebook text-blue-500"></i>
+                    Facebook URL</label
+                  >
+                  <input
+                    type="text"
+                    id="socialFacebook"
+                    value="https://facebook.com"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-0.5 flex items-center gap-1.5"
+                    ><i class="fa-brands fa-instagram text-pink-500"></i>
+                    Instagram URL</label
+                  >
+                  <input
+                    type="text"
+                    id="socialInstagram"
+                    value="https://instagram.com"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-0.5 flex items-center gap-1.5"
+                    ><i class="fa-brands fa-tiktok text-cyan-400"></i> TikTok
+                    URL</label
+                  >
+                  <input
+                    type="text"
+                    id="socialTiktok"
+                    value="https://tiktok.com"
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-0.5 flex items-center gap-1.5"
+                    ><i class="fa-brands fa-x-twitter text-slate-200"></i> X /
+                    Twitter URL</label
+                  >
+                  <input
+                    type="text"
+                    id="socialTwitter"
+                    value=""
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-0.5 flex items-center gap-1.5"
+                    ><i class="fa-brands fa-youtube text-red-500"></i> YouTube
+                    URL</label
+                  >
+                  <input
+                    type="text"
+                    id="socialYoutube"
+                    value=""
+                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <h2
-              class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
             >
-              <i class="fa-solid fa-palette"></i> Estilos Visuales
+              <i class="fa-solid fa-palette"></i> Estilos Visuales & Colores
             </h2>
             <div class="grid grid-cols-3 gap-3">
               <div>
@@ -521,7 +918,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   type="color"
                   id="colorPrimary"
                   value="#e11d48"
-                  class="w-full h-9 bg-slate-900 border border-slate-700 rounded-lg p-1 cursor-pointer"
+                  class="w-full h-9 bg-slate-950 border border-slate-800 rounded-lg p-1 cursor-pointer"
                 />
               </div>
               <div>
@@ -533,17 +930,17 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                   type="color"
                   id="colorTitle"
                   value="#ffffff"
-                  class="w-full h-9 bg-slate-900 border border-slate-700 rounded-lg p-1 cursor-pointer"
+                  class="w-full h-9 bg-slate-950 border border-slate-800 rounded-lg p-1 cursor-pointer"
                 />
               </div>
               <div>
                 <label
                   class="block text-[10px] font-semibold text-slate-300 mb-1"
-                  >Animación</label
+                  >Efecto Tarjetas</label
                 >
                 <select
                   id="animationType"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-2 text-xs text-white"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-2 text-xs text-white"
                 >
                   <option value="zoom">Zoom Suave</option>
                   <option value="lift">Elevación</option>
@@ -553,33 +950,11 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             </div>
           </div>
 
-          <!-- Servicios -->
           <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
-          >
-            <div class="flex items-center justify-between">
-              <h2
-                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
-              >
-                <i class="fa-solid fa-layer-group"></i> Tarjetas de Servicios
-              </h2>
-              <button
-                id="btnAddService"
-                type="button"
-                class="text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold px-2.5 py-1 rounded-lg"
-              >
-                + Añadir
-              </button>
-            </div>
-            <div id="servicesContainer" class="space-y-4"></div>
-          </div>
-
-          <!-- Ubicación -->
-          <div
-            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-800 shadow-md space-y-4"
           >
             <h2
-              class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
             >
               <i class="fa-solid fa-map-location-dot"></i> Ubicación y Mapa
             </h2>
@@ -591,7 +966,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                 type="text"
                 id="ubicacion"
                 value="Av. Monseñor Rivero #450, Santa Cruz, Bolivia"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:border-emerald-500 focus:outline-none"
               />
             </div>
             <div>
@@ -602,20 +977,134 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
                 type="text"
                 id="mapQuery"
                 value="Santa Cruz de la Sierra, Bolivia"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white"
+                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-emerald-500 focus:outline-none"
               />
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900 p-4 sm:p-5 rounded-2xl border border-emerald-500/30 shadow-lg space-y-4"
+          >
+            <h2
+              class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-film"></i> Animaciones al Hacer Scroll
+            </h2>
+            <p class="text-[11px] text-slate-400">
+              Selecciona el tipo de animación con la que aparecerá cada sección
+              al hacer scroll:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Hero</label
+                >
+                <select
+                  id="animHero"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="fade-up">Aparición Abajo (Fade Up)</option>
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="slide-left">Deslizar Izquierda</option>
+                  <option value="slide-right">Deslizar Derecha</option>
+                  <option value="bounce">Rebote Único</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Servicios</label
+                >
+                <select
+                  id="animServicios"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="fade-up">Aparición Abajo</option>
+                  <option value="slide-left">Deslizar Izquierda</option>
+                  <option value="slide-right">Deslizar Derecha</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Horarios</label
+                >
+                <select
+                  id="animHorarios"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="slide-left">Deslizar Izquierda</option>
+                  <option value="fade-up">Aparición Abajo</option>
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Galería</label
+                >
+                <select
+                  id="animGaleria"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="fade-up">Aparición Abajo</option>
+                  <option value="slide-right">Deslizar Derecha</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Testimonios</label
+                >
+                <select
+                  id="animTestimonios"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="fade-up">Aparición Abajo</option>
+                  <option value="slide-right">Deslizar Derecha</option>
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-semibold text-slate-300 mb-1"
+                  >Animación Redes</label
+                >
+                <select
+                  id="animRedes"
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 text-white"
+                >
+                  <option value="bounce">Rebote Único</option>
+                  <option value="zoom-in">Zoom In</option>
+                  <option value="fade-up">Aparición Abajo</option>
+                  <option value="none">Sin Animación</option>
+                </select>
+              </div>
             </div>
           </div>
         </form>
       </section>
 
-      <!-- Panel Previsualizador -->
       <section
         id="panelPreview"
         class="hidden lg:flex lg:col-span-7 bg-slate-950 p-3 sm:p-6 flex-col items-center min-h-[600px] w-full"
       >
         <div
-          class="w-full max-w-5xl bg-slate-800 px-4 py-3 rounded-t-2xl border border-slate-700 border-b-0 flex flex-wrap items-center justify-between gap-3 text-xs"
+          class="w-full max-w-5xl bg-slate-900 px-4 py-3 rounded-t-2xl border border-slate-800 border-b-0 flex flex-wrap items-center justify-between gap-3 text-xs"
         >
           <span
             class="font-mono text-slate-300 font-bold hidden sm:inline-block"
@@ -623,12 +1112,12 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
           >
 
           <div
-            class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700/80 gap-1"
+            class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 gap-1"
           >
             <button
               type="button"
               data-view="desktop"
-              class="btnViewMode px-3 py-1 rounded-lg text-xs font-bold text-white bg-slate-700 flex items-center gap-1.5"
+              class="btnViewMode px-3.5 py-1 rounded-lg text-xs font-bold text-white bg-slate-800 flex items-center gap-1.5"
             >
               <i class="fa-solid fa-desktop"></i>
               <span class="hidden sm:inline">PC</span>
@@ -636,7 +1125,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             <button
               type="button"
               data-view="tablet"
-              class="btnViewMode px-3 py-1 rounded-lg text-xs font-bold text-slate-400 flex items-center gap-1.5"
+              class="btnViewMode px-3.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"
             >
               <i class="fa-solid fa-tablet-screen-button"></i>
               <span class="hidden sm:inline">Tablet</span>
@@ -644,7 +1133,7 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
             <button
               type="button"
               data-view="mobile"
-              class="btnViewMode px-3 py-1 rounded-lg text-xs font-bold text-slate-400 flex items-center gap-1.5"
+              class="btnViewMode px-3.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"
             >
               <i class="fa-solid fa-mobile-screen-button"></i>
               <span class="hidden sm:inline">Móvil</span>
@@ -668,3 +1157,1384 @@ Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
     <script src="js/app.js"></script>
   </body>
 </html>
+""" # 2. generator.js - Exact copy of the provided user code generator_js_user =
+"""function construirHTML(datos) { const phoneClean = (datos.telefono ||
+'').replace(/[^0-9]/g, ''); const waUrl =
+`https://wa.me/${phoneClean}?text=Hola,%20quisiera%20más%20información%20sobre%20${encodeURIComponent(datos.nombre
+|| '')}`; function renderIcon(iconClass) { if (!iconClass || iconClass ===
+'none') return ''; return `<i class="${iconClass}"></i>`; } function
+getAnimData(animVal) { if (!animVal || animVal === 'none') return ''; return
+`data-animate="${animVal}" class="scroll-anim"`; } let animCardClass =
+"transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"; if
+(datos.animationType === 'zoom') { animCardClass = "transition-all duration-300
+hover:scale-[1.03] hover:shadow-2xl"; } else if (datos.animationType === 'glow')
+{ animCardClass = "transition-all duration-300
+hover:shadow-[0_0_25px_rgba(225,29,72,0.3)] hover:-translate-y-1"; } const
+alignTextClass = datos.heroAlign === 'left' ? 'text-left' : (datos.heroAlign ===
+'right' ? 'text-right' : 'text-center'); let bannerTopHTML = ''; if
+(datos.modBannerActive && datos.bannerTexto) { bannerTopHTML = `
+<div
+  class="py-3 px-6 text-center text-xs md:text-sm font-extrabold tracking-wide uppercase shadow-inner"
+  style="background-color: ${datos.bannerBgColor || '#e11d48'}; color: ${datos.bannerTextColor || '#ffffff'}"
+>
+  ${datos.bannerTexto}
+</div>
+`; } let statsHTML = ''; if (datos.modStatsActive && (datos.statsList ||
+[]).length > 0) { const boxes = datos.statsList.map(st => { const iconHTML =
+(st.icon && st.icon !== 'none') ? `<i
+  class="${st.icon} text-3xl mb-3"
+  style="color: ${datos.colorPrimary}"
+></i
+>` : ''; return `
+<div
+  class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2"
+>
+  ${iconHTML}
+  <h3 class="text-2xl md:text-3xl font-black text-slate-900">${st.numero}</h3>
+  <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+    ${st.etiqueta}
+  </p>
+</div>
+`; }).join('\\n'); statsHTML = `
+<section class="max-w-6xl mx-auto px-6 md:px-12 py-6 my-8">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">${boxes}</div>
+</section>
+`; } const tarjetasServicios = (datos.serviciosList || []).map((s, idx) => `
+<div
+  class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm ${animCardClass} group flex flex-col"
+>
+  <div class="h-52 overflow-hidden relative bg-slate-100">
+    <img
+      src="${s.imagen || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80'}"
+      alt="${s.titulo}"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    />
+    <span
+      class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-md"
+      >0${idx + 1}</span
+    >
+  </div>
+  <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+    <div>
+      <h3 class="text-xl font-extrabold text-slate-800 mb-2">${s.titulo}</h3>
+      <p class="text-slate-600 text-sm leading-relaxed mb-4">
+        ${s.descripcion}
+      </p>
+    </div>
+    <div
+      class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between"
+    >
+      <span class="text-xs font-semibold text-slate-400">Disponible</span>
+      <a
+        href="${waUrl}"
+        target="_blank"
+        class="text-xs font-bold px-5 py-2.5 rounded-xl text-white shadow-md flex items-center gap-2"
+        style="background-color: ${s.btnColor || datos.colorPrimary}"
+      >
+        ${renderIcon(s.btnIcon)} <span>${s.btnText || 'Solicitar'}</span>
+      </a>
+    </div>
+  </div>
+</div>
+`).join('\\n'); let horariosHTML = ''; let linkHorarios = ''; if
+(datos.modHorariosActive) { linkHorarios = `<a
+  href="#horarios"
+  class="nav-link hover:text-slate-900"
+  >Horarios</a
+>`; let contenidoHorario = ''; if (datos.horariosModo === 'diario') {
+contenidoHorario = `
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+  <div
+    class="bg-slate-50 p-5 rounded-2xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Lunes</span
+    ><span class="text-xs text-slate-600 font-semibold">${datos.h_lunes}</span>
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Martes</span
+    ><span class="text-xs text-slate-600 font-semibold">${datos.h_martes}</span>
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase"
+      >Miércoles</span
+    ><span class="text-xs text-slate-600 font-semibold"
+      >${datos.h_miercoles}</span
+    >
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Jueves</span
+    ><span class="text-xs text-slate-600 font-semibold">${datos.h_jueves}</span>
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Viernes</span
+    ><span class="text-xs text-slate-600 font-semibold"
+      >${datos.h_viernes}</span
+    >
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Sábado</span
+    ><span class="text-xs text-slate-600 font-semibold">${datos.h_sabado}</span>
+  </div>
+  <div
+    class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center col-span-2 space-y-1"
+  >
+    <span class="font-bold text-xs text-slate-800 block uppercase">Domingo</span
+    ><span class="text-xs text-slate-600 font-semibold"
+      >${datos.h_domingo}</span
+    >
+  </div>
+</div>
+`; } else { contenidoHorario = `
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+  <div
+    class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-2"
+  >
+    <i
+      class="fa-solid fa-calendar-days text-3xl mb-2"
+      style="color: ${datos.colorPrimary}"
+    ></i>
+    <h3 class="font-bold text-slate-800 text-base">Lunes a Viernes</h3>
+    <p class="text-slate-600 font-semibold text-sm">${datos.horariosLV}</p>
+  </div>
+  <div
+    class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-2"
+  >
+    <i
+      class="fa-solid fa-clock text-3xl mb-2"
+      style="color: ${datos.colorPrimary}"
+    ></i>
+    <h3 class="font-bold text-slate-800 text-base">Sábados y Domingos</h3>
+    <p class="text-slate-600 font-semibold text-sm">${datos.horariosSD}</p>
+  </div>
+</div>
+`; } horariosHTML = `
+<section
+  id="horarios"
+  ${getAnimData(datos.animHorarios)}
+  class="bg-white py-20 px-6 md:px-12 my-12 border-t border-slate-100"
+>
+  <div class="max-w-5xl my-12 mx-auto text-center space-y-8">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+      ${datos.horariosTitulo || 'Horarios de Atención'}
+    </h2>
+    ${contenidoHorario}
+  </div>
+</section>
+`; } let galeriaHTML = ''; let linkGaleria = ''; if (datos.modGaleriaActive &&
+(datos.galeriaList || []).length > 0) { linkGaleria = `<a
+  href="#galeria"
+  class="nav-link hover:text-slate-900"
+  >Galería</a
+>`; const fotos = datos.galeriaList.map(g => `
+<div
+  class="rounded-2xl overflow-hidden shadow-md h-52 group relative cursor-pointer gallery-item"
+  data-full="${g.url}"
+>
+  <img
+    src="${g.url}"
+    alt="Galería"
+    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+  <div
+    class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-3xl"
+  >
+    <i class="fa-solid fa-magnifying-glass-plus"></i>
+  </div>
+</div>
+`).join('\\n'); const subGaleria = datos.galeriaSubtitulo ? `
+<p
+  class="text-center text-slate-500 text-sm mb-12 max-w-lg mx-auto leading-relaxed"
+>
+  ${datos.galeriaSubtitulo}
+</p>
+` : ''; galeriaHTML = `
+<section
+  id="galeria"
+  ${getAnimData(datos.animGaleria)}
+  class="max-w-6xl mx-auto px-6 md:px-12 py-20 my-12"
+>
+  <h2 class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">
+    ${datos.galeriaTitulo || 'Galería de Fotos'}
+  </h2>
+  ${subGaleria}
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+    ${fotos}
+  </div>
+</section>
+`; } let testimoniosHTML = ''; if (datos.modTestimoniosActive &&
+(datos.testimoniosList || []).length > 0) { const cards =
+datos.testimoniosList.map(t => `
+<div
+  class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4"
+>
+  <div class="flex items-center gap-1 text-amber-400 text-sm">
+    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+    ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+    ><i class="fa-solid fa-star"></i>
+  </div>
+  <p class="text-slate-600 text-sm leading-relaxed italic">"${t.texto}"</p>
+  <p class="font-bold text-slate-800 text-sm">— ${t.cliente}</p>
+</div>
+`).join('\\n'); testimoniosHTML = `
+<section
+  ${getAnimData(datos.animTestimonios)}
+  class="bg-slate-100 py-20 px-6 md:px-12 my-12 border-t border-b border-slate-200"
+>
+  <div class="max-w-6xl mt-12 mx-auto space-y-12">
+    <h2 class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-8">
+      ${datos.testimoniosTitulo || 'Opiniones de Clientes'}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">${cards}</div>
+  </div>
+</section>
+`; } let faqHTML = ''; if (datos.modFaqActive && (datos.faqList || []).length >
+0) { const items = datos.faqList.map((f, i) => `
+<div
+  class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 space-y-2"
+>
+  <h3
+    class="font-bold text-slate-900 text-base md:text-lg flex items-center gap-3"
+  >
+    <i class="fa-solid fa-circle-question text-emerald-500 text-xl"></i>
+    ${f.pregunta}
+  </h3>
+  <p class="text-slate-600 text-sm leading-relaxed pl-8">${f.respuesta}</p>
+</div>
+`).join('\\n'); faqHTML = `
+<section class="max-w-4xl mx-auto px-6 md:px-12 py-20 my-3">
+  <h2 class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-12">
+    ${datos.faqTitulo || 'Preguntas Frecuentes'}
+  </h2>
+  <div class="space-y-5">${items}</div>
+</section>
+`; } let redesSeccionHTML = ''; let linkRedes = ''; if (datos.modRedesActive) {
+const redesButtons = []; if (datos.socialFacebook) redesButtons.push(`<a
+  href="${datos.socialFacebook}"
+  target="_blank"
+  class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+  ><i class="fa-brands fa-facebook-f"></i></a
+>`); if (datos.socialInstagram) redesButtons.push(`<a
+  href="${datos.socialInstagram}"
+  target="_blank"
+  class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+  ><i class="fa-brands fa-instagram"></i></a
+>`); if (datos.socialTiktok) redesButtons.push(`<a
+  href="${datos.socialTiktok}"
+  target="_blank"
+  class="w-14 h-14 rounded-2xl bg-slate-950 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+  ><i class="fa-brands fa-tiktok"></i></a
+>`); if (datos.socialTwitter) redesButtons.push(`<a
+  href="${datos.socialTwitter}"
+  target="_blank"
+  class="w-14 h-14 rounded-2xl bg-slate-800 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+  ><i class="fa-brands fa-x-twitter"></i></a
+>`); if (datos.socialYoutube) redesButtons.push(`<a
+  href="${datos.socialYoutube}"
+  target="_blank"
+  class="w-14 h-14 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+  ><i class="fa-brands fa-youtube"></i></a
+>`); if (redesButtons.length > 0) { linkRedes = `<a
+  href="#redes"
+  class="nav-link hover:text-slate-900"
+  >Redes</a
+>`; const subtituloHTML = datos.redesSubtitulo ? `
+<p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed mb-8">
+  ${datos.redesSubtitulo}
+</p>
+` : ''; redesSeccionHTML = `
+<section
+  id="redes"
+  ${getAnimData(datos.animRedes)}
+  class="bg-white py-20 px-6 md:px-12 my-16 border-t border-b border-slate-100"
+>
+  <div class="max-w-4xl mx-auto text-center space-y-8">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+      ${datos.redesTitulo || 'Síguenos en Redes Sociales'}
+    </h2>
+    ${subtituloHTML}
+    <div class="flex flex-wrap justify-center gap-5 pt-2">
+      ${redesButtons.join('')}
+    </div>
+  </div>
+</section>
+`; } } const mapEncoded = encodeURIComponent(datos.mapQuery || datos.ubicacion
+|| ''); const mapIframeUrl =
+`https://maps.google.com/maps?q=${mapEncoded}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+return `<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${datos.nombre} | ${datos.categoria}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      .scroll-anim {
+        opacity: 0;
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .scroll-anim[data-animate="fade-up"] {
+        transform: translateY(30px);
+      }
+      .scroll-anim[data-animate="zoom-in"] {
+        transform: scale(0.92);
+      }
+      .scroll-anim[data-animate="slide-left"] {
+        transform: translateX(-40px);
+      }
+      .scroll-anim[data-animate="slide-right"] {
+        transform: translateX(40px);
+      }
+      .scroll-anim[data-animate="bounce"] {
+        transform: scale(0.85);
+      }
+
+      .scroll-anim.animated {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1) !important;
+      }
+
+      .scroll-anim[data-animate="bounce"].animated {
+        animation: smoothBounce 0.7s ease-out forwards;
+      }
+
+      @keyframes smoothBounce {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        60% {
+          opacity: 1;
+          transform: scale(1.04);
+        }
+        85% {
+          transform: scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white px-2 sm:px-4 md:px-8 py-4"
+  >
+    ${bannerTopHTML}
+
+    <nav
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm rounded-2xl"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#inicio"
+          class="nav-link text-xl font-black text-slate-900 flex items-center gap-2"
+        >
+          ${datos.nombre}
+        </a>
+
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600"
+        >
+          <a href="#inicio" class="nav-link hover:text-slate-900">Inicio</a>
+          <a href="#servicios" class="nav-link hover:text-slate-900"
+            >Servicios</a
+          >
+          ${linkHorarios} ${linkGaleria} ${linkRedes}
+          <a href="#contacto" class="nav-link hover:text-slate-900"
+            >Ubicación</a
+          >
+        </div>
+
+        <a
+          href="${waUrl}"
+          target="_blank"
+          class="hidden md:flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg text-xs md:text-sm transition-transform hover:scale-105"
+          style="background-color: ${datos.btnNavColor || '#25D366'}"
+        >
+          <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
+        </a>
+
+        <button
+          id="mobileMenuBtn"
+          type="button"
+          class="md:hidden text-slate-800 p-2 text-xl"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-4"
+      >
+        <a href="#inicio" class="nav-link block font-bold text-slate-700"
+          >Inicio</a
+        >
+        <a href="#servicios" class="nav-link block font-bold text-slate-700"
+          >Servicios</a
+        >
+        ${linkHorarios} ${linkGaleria} ${linkRedes}
+        <a href="#contacto" class="nav-link block font-bold text-slate-700"
+          >Ubicación</a
+        >
+        <div class="pt-2 border-t border-slate-100">
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-xl shadow-md text-sm w-full"
+            style="background-color: ${datos.btnNavColor || '#25D366'}"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      id="inicio"
+      ${getAnimData(datos.animHero)}
+      class="relative min-h-[580px] flex items-center justify-center px-6 md:px-12 py-24 bg-slate-900 overflow-hidden rounded-3xl my-4"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="${datos.heroBgUrl}"
+          alt="Portada"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px]"></div>
+      </div>
+      <div class="max-w-4xl mx-auto relative z-10 space-y-6 ${alignTextClass}">
+        <span
+          class="inline-block uppercase tracking-widest text-xs font-extrabold text-white bg-white/10 border border-white/20 px-4 py-1.5 rounded-full"
+          >${datos.categoria}</span
+        >
+        <h1
+          class="text-4xl md:text-6xl font-black leading-tight"
+          style="color: ${datos.colorTitle}"
+        >
+          ${datos.tituloHero}
+        </h1>
+        <p
+          class="text-base md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed"
+        >
+          ${datos.descripcion}
+        </p>
+        <div class="pt-6 pb-4 flex flex-wrap gap-4 ${datos.btnAlign}">
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="text-white font-extrabold px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-2 transition-transform hover:scale-105"
+            style="background-color: ${datos.btnHero1Color}"
+          >
+            ${renderIcon(datos.btnHero1Icon)} <span>${datos.btnHero1Text}</span>
+          </a>
+          <a
+            href="#servicios"
+            class="nav-link text-white border border-white/30 backdrop-blur-md font-bold px-7 py-4 rounded-2xl flex items-center gap-2 transition-all hover:bg-white/10"
+            style="background-color: ${datos.btnHero2Color}"
+          >
+            <span>${datos.btnHero2Text}</span> ${renderIcon(datos.btnHero2Icon)}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    ${statsHTML}
+
+    <section
+      id="servicios"
+      ${getAnimData(datos.animServicios)}
+      class="max-w-6xl mx-auto px-6 md:px-12 py-20 my-6"
+    >
+      <h2
+        class="text-3xl md:text-4xl font-black text-center mt-3 text-slate-900 mb-3"
+      >
+        ${datos.serviciosTitulo || 'Nuestros Servicios'}
+      </h2>
+      <p
+        class="text-center text-slate-500 text-sm mb-12 max-w-xl mx-auto leading-relaxed"
+      >
+        ${datos.serviciosSubtitulo || ''}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        ${tarjetasServicios}
+      </div>
+    </section>
+
+    ${horariosHTML} ${galeriaHTML} ${testimoniosHTML} ${faqHTML}
+    ${redesSeccionHTML}
+
+    <section
+      id="contacto"
+      class="bg-slate-100 py-20 px-6 md:px-12 my-12 border-t border-slate-200 rounded-3xl"
+    >
+      <div class="max-w-6xl mx-auto space-y-10">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200"
+              >Contacto</span
+            >
+            <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">
+              ${datos.nombre}
+            </h3>
+            <p class="text-sm text-slate-600 font-medium">
+              📍 ${datos.ubicacion} | 📞 ${datos.telefono}
+            </p>
+          </div>
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="text-white font-bold px-8 py-4 rounded-2xl shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
+            style="background-color: ${datos.btnNavColor || '#25D366'}"
+            ><i class="fa-brands fa-whatsapp text-lg"></i> Contactar por
+            WhatsApp</a
+          >
+        </div>
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 h-96"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            src="${mapIframeUrl}"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-slate-900 text-slate-400 py-12 px-6 md:px-12 text-center text-xs space-y-3 rounded-2xl my-4"
+    >
+      <p class="font-semibold text-slate-300">
+        &copy; ${new Date().getFullYear()} ${datos.nombre}. Todos los derechos
+        reservados.
+      </p>
+      <p class="text-slate-500">📍 ${datos.ubicacion} | 📞 ${datos.telefono}</p>
+    </footer>
+
+    <div
+      id="galleryModal"
+      class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+    >
+      <button
+        id="closeModal"
+        class="absolute top-6 right-6 text-white text-3xl font-bold cursor-pointer"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img
+        id="modalImg"
+        src=""
+        class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+      />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorSelectAll
+          ? document.querySelectorAll(".scroll-anim")
+          : [];
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animated");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        elements.forEach((el) => observer.observe(el));
+
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        document.addEventListener("click", function (e) {
+          const link = e.target.closest(".nav-link");
+          if (link) {
+            const href = link.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              e.preventDefault();
+              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+              }
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }
+          }
+        });
+
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeModal = document.getElementById("closeModal");
+
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            const fullUrl = this.getAttribute("data-full");
+            if (modal && modalImg && fullUrl) {
+              modalImg.src = fullUrl;
+              modal.classList.remove("hidden");
+              modal.classList.add("flex");
+            }
+          });
+        });
+
+        if (closeModal && modal) {
+          closeModal.addEventListener("click", function () {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          });
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+              modal.classList.add("hidden");
+              modal.classList.remove("flex");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+`; } """ with open('/tmp/creador_plantillas_v24/index.html', 'w',
+encoding='utf-8') as f: f.write(index_html) with
+open('/tmp/creador_plantillas_v24/js/generator.js', 'w', encoding='utf-8') as f:
+f.write(generator_js_user) with open('/tmp/creador_plantillas_v24/js/app.js',
+'w', encoding='utf-8') as f: f.write(app_js) with
+open('/tmp/creador_plantillas_v24/css/styles.css', 'w', encoding='utf-8') as f:
+f.write(styles_css) zip_path = '/tmp/creador_plantillas_v24_perfect_spacing.zip'
+with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf: for root,
+dirs, files in os.walk('/tmp/creador_plantillas_v24'): for file in files:
+file_path = os.path.join(root, file) arcname = os.path.relpath(file_path,
+'/tmp/creador_plantillas_v24') zipf.write(file_path, arcname) print("V24 Perfect
+Spacing Build Complete.") }Para lograr que **todas las secciones mantengan una
+distancia uniforme y homogénea**, sin importar si activas o eliminas un módulo,
+el secreto está en estandarizar la clase contenedora de cada `
+<section>
+  ` con los mismos márgenes (`my-12` o `my-16`) y rellenos internos (`py-16
+  md:py-20 px-6 md:px-12`). Aquí tienes la función **`construirHTML(datos)`
+  completa**, con las distancias superiores e inferiores unificadas para que el
+  diseño no se descuadre jamás: ```javascript function construirHTML(datos) {
+  const phoneClean = (datos.telefono || '').replace(/[^0-9]/g, ''); const waUrl
+  =
+  `[https://wa.me/$](https://wa.me/$){phoneClean}?text=Hola,%20quisiera%20más%20información%20sobre%20${encodeURIComponent(datos.nombre
+  || '')}`; function renderIcon(iconClass) { if (!iconClass || iconClass ===
+  'none') return ''; return `<i class="${iconClass}"></i>`; } function
+  getAnimData(animVal) { if (!animVal || animVal === 'none') return ''; return
+  `data-animate="${animVal}" class="scroll-anim"`; } let animCardClass =
+  "transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"; if
+  (datos.animationType === 'zoom') { animCardClass = "transition-all
+  duration-300 hover:scale-[1.03] hover:shadow-2xl"; } else if
+  (datos.animationType === 'glow') { animCardClass = "transition-all
+  duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.3)]
+  hover:-translate-y-1"; } const alignTextClass = datos.heroAlign === 'left' ?
+  'text-left' : (datos.heroAlign === 'right' ? 'text-right' : 'text-center'); //
+  Módulo 0: Banner Promocional Top let bannerTopHTML = ''; if
+  (datos.modBannerActive && datos.bannerTexto) { bannerTopHTML = `
+  <div
+    class="py-3 px-6 text-center text-xs md:text-sm font-extrabold tracking-wide uppercase shadow-inner"
+    style="background-color: ${datos.bannerBgColor || '#e11d48'}; color: ${datos.bannerTextColor || '#ffffff'}"
+  >
+    ${datos.bannerTexto}
+  </div>
+  `; } // Módulo 1: Beneficios / Métricas let statsHTML = ''; if
+  (datos.modStatsActive && (datos.statsList || []).length > 0) { const boxes =
+  datos.statsList.map(st => { const iconHTML = (st.icon && st.icon !== 'none') ?
+  `<i class="${st.icon} text-3xl mb-3" style="color: ${datos.colorPrimary}"></i
+  >` : ''; return `
+  <div
+    class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2"
+  >
+    ${iconHTML}
+    <h3 class="text-2xl md:text-3xl font-black text-slate-900">${st.numero}</h3>
+    <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+      ${st.etiqueta}
+    </p>
+  </div>
+  `; }).join('\n'); statsHTML = `
+  <section class="max-w-6xl mx-auto px-6 md:px-12 py-12 my-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">${boxes}</div>
+  </section>
+  `; } // Tarjetas de Servicios const tarjetasServicios = (datos.serviciosList
+  || []).map((s, idx) => `
+  <div
+    class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm ${animCardClass} group flex flex-col"
+  >
+    <div class="h-52 overflow-hidden relative bg-slate-100">
+      <img
+        src="${s.imagen || '[https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80)'}"
+        alt="${s.titulo}"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <span
+        class="absolute bottom-3 left-4 text-xs font-bold text-white uppercase bg-black/40 backdrop-blur-md px-3 py-1 rounded-md"
+        >0${idx + 1}</span
+      >
+    </div>
+    <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="text-xl font-extrabold text-slate-800 mb-2">${s.titulo}</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+          ${s.descripcion}
+        </p>
+      </div>
+      <div
+        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between"
+      >
+        <span class="text-xs font-semibold text-slate-400">Disponible</span>
+        <a
+          href="${waUrl}"
+          target="_blank"
+          class="text-xs font-bold px-5 py-2.5 rounded-xl text-white shadow-md flex items-center gap-2"
+          style="background-color: ${s.btnColor || datos.colorPrimary}"
+        >
+          ${renderIcon(s.btnIcon)} <span>${s.btnText || 'Solicitar'}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  `).join('\n'); // Módulo de Horarios let horariosHTML = ''; let linkHorarios =
+  ''; if (datos.modHorariosActive) { linkHorarios = `<a
+    href="#horarios"
+    class="nav-link hover:text-slate-900"
+    >Horarios</a
+  >`; let contenidoHorario = ''; if (datos.horariosModo === 'diario') {
+  contenidoHorario = `
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+    <div
+      class="bg-slate-50 p-5 rounded-2xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase">Lunes</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_lunes}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Martes</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_martes}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Miércoles</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_miercoles}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Jueves</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_jueves}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Viernes</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_viernes}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Sábado</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_sabado}</span
+      >
+    </div>
+    <div
+      class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center col-span-2 space-y-1"
+    >
+      <span class="font-bold text-xs text-slate-800 block uppercase"
+        >Domingo</span
+      ><span class="text-xs text-slate-600 font-semibold"
+        >${datos.h_domingo}</span
+      >
+    </div>
+  </div>
+  `; } else { contenidoHorario = `
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div
+      class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-2"
+    >
+      <i
+        class="fa-solid fa-calendar-days text-3xl mb-2"
+        style="color: ${datos.colorPrimary}"
+      ></i>
+      <h3 class="font-bold text-slate-800 text-base">Lunes a Viernes</h3>
+      <p class="text-slate-600 font-semibold text-sm">${datos.horariosLV}</p>
+    </div>
+    <div
+      class="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center space-y-2"
+    >
+      <i
+        class="fa-solid fa-clock text-3xl mb-2"
+        style="color: ${datos.colorPrimary}"
+      ></i>
+      <h3 class="font-bold text-slate-800 text-base">Sábados y Domingos</h3>
+      <p class="text-slate-600 font-semibold text-sm">${datos.horariosSD}</p>
+    </div>
+  </div>
+  `; } horariosHTML = `
+  <section
+    id="horarios"
+    ${getAnimData(datos.animHorarios)}
+    class="bg-white py-16 md:py-20 px-6 md:px-12 my-12 border-t border-b border-slate-100 rounded-3xl"
+  >
+    <div class="max-w-5xl mx-auto text-center space-y-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+        ${datos.horariosTitulo || 'Horarios de Atención'}
+      </h2>
+      ${contenidoHorario}
+    </div>
+  </section>
+  `; } // Galería let galeriaHTML = ''; let linkGaleria = ''; if
+  (datos.modGaleriaActive && (datos.galeriaList || []).length > 0) { linkGaleria
+  = `<a href="#galeria" class="nav-link hover:text-slate-900">Galería</a>`;
+  const fotos = datos.galeriaList.map(g => `
+  <div
+    class="rounded-2xl overflow-hidden shadow-md h-52 group relative cursor-pointer gallery-item"
+    data-full="${g.url}"
+  >
+    <img
+      src="${g.url}"
+      alt="Galería"
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    />
+    <div
+      class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-3xl"
+    >
+      <i class="fa-solid fa-magnifying-glass-plus"></i>
+    </div>
+  </div>
+  `).join('\n'); const subGaleria = datos.galeriaSubtitulo ? `
+  <p
+    class="text-center text-slate-500 text-sm mb-12 max-w-lg mx-auto leading-relaxed"
+  >
+    ${datos.galeriaSubtitulo}
+  </p>
+  ` : ''; galeriaHTML = `
+  <section
+    id="galeria"
+    ${getAnimData(datos.animGaleria)}
+    class="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-20 my-12"
+  >
+    <h2 class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">
+      ${datos.galeriaTitulo || 'Galería de Fotos'}
+    </h2>
+    ${subGaleria}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+      ${fotos}
+    </div>
+  </section>
+  `; } // Testimonios let testimoniosHTML = ''; if (datos.modTestimoniosActive
+  && (datos.testimoniosList || []).length > 0) { const cards =
+  datos.testimoniosList.map(t => `
+  <div
+    class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4"
+  >
+    <div class="flex items-center gap-1 text-amber-400 text-sm">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+      ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+      ><i class="fa-solid fa-star"></i>
+    </div>
+    <p class="text-slate-600 text-sm leading-relaxed italic">"${t.texto}"</p>
+    <p class="font-bold text-slate-800 text-sm">— ${t.cliente}</p>
+  </div>
+  `).join('\n'); testimoniosHTML = `
+  <section
+    ${getAnimData(datos.animTestimonios)}
+    class="bg-slate-100 py-16 md:py-20 px-6 md:px-12 my-12 border-t border-b border-slate-200 rounded-3xl"
+  >
+    <div class="max-w-6xl mx-auto space-y-12">
+      <h2 class="text-3xl md:text-4xl font-black text-center text-slate-900">
+        ${datos.testimoniosTitulo || 'Opiniones de Clientes'}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">${cards}</div>
+    </div>
+  </section>
+  `; } // FAQ let faqHTML = ''; if (datos.modFaqActive && (datos.faqList ||
+  []).length > 0) { const items = datos.faqList.map((f, i) => `
+  <div
+    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 space-y-2"
+  >
+    <h3
+      class="font-bold text-slate-900 text-base md:text-lg flex items-center gap-3"
+    >
+      <i class="fa-solid fa-circle-question text-emerald-500 text-xl"></i>
+      ${f.pregunta}
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed pl-8">${f.respuesta}</p>
+  </div>
+  `).join('\n'); faqHTML = `
+  <section class="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-20 my-12">
+    <h2
+      class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-12"
+    >
+      ${datos.faqTitulo || 'Preguntas Frecuentes'}
+    </h2>
+    <div class="space-y-5">${items}</div>
+  </section>
+  `; } // Redes Sociales let redesSeccionHTML = ''; let linkRedes = ''; if
+  (datos.modRedesActive) { const redesButtons = []; if (datos.socialFacebook)
+  redesButtons.push(`<a
+    href="${datos.socialFacebook}"
+    target="_blank"
+    class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+    ><i class="fa-brands fa-facebook-f"></i></a
+  >`); if (datos.socialInstagram) redesButtons.push(`<a
+    href="${datos.socialInstagram}"
+    target="_blank"
+    class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+    ><i class="fa-brands fa-instagram"></i></a
+  >`); if (datos.socialTiktok) redesButtons.push(`<a
+    href="${datos.socialTiktok}"
+    target="_blank"
+    class="w-14 h-14 rounded-2xl bg-slate-950 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+    ><i class="fa-brands fa-tiktok"></i></a
+  >`); if (datos.socialTwitter) redesButtons.push(`<a
+    href="${datos.socialTwitter}"
+    target="_blank"
+    class="w-14 h-14 rounded-2xl bg-slate-800 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+    ><i class="fa-brands fa-x-twitter"></i></a
+  >`); if (datos.socialYoutube) redesButtons.push(`<a
+    href="${datos.socialYoutube}"
+    target="_blank"
+    class="w-14 h-14 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl shadow-lg transition-transform hover:scale-110"
+    ><i class="fa-brands fa-youtube"></i></a
+  >`); if (redesButtons.length > 0) { linkRedes = `<a
+    href="#redes"
+    class="nav-link hover:text-slate-900"
+    >Redes</a
+  >`; const subtituloHTML = datos.redesSubtitulo ? `
+  <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed mb-8">
+    ${datos.redesSubtitulo}
+  </p>
+  ` : ''; redesSeccionHTML = `
+  <section
+    id="redes"
+    ${getAnimData(datos.animRedes)}
+    class="bg-white py-16 md:py-20 px-6 md:px-12 my-12 border-t border-b border-slate-100 rounded-3xl"
+  >
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+        ${datos.redesTitulo || 'Síguenos en Redes Sociales'}
+      </h2>
+      ${subtituloHTML}
+      <div class="flex flex-wrap justify-center gap-5 pt-2">
+        ${redesButtons.join('')}
+      </div>
+    </div>
+  </section>
+  `; } } const mapEncoded = encodeURIComponent(datos.mapQuery || datos.ubicacion
+  || ''); const mapIframeUrl =
+  `[https://maps.google.com/maps?q=$](https://maps.google.com/maps?q=$){mapEncoded}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  return `<!doctype html>
+  <html lang="es" class="scroll-smooth">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>${datos.nombre} | ${datos.categoria}</title>
+      <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+      <link
+        rel="stylesheet"
+        href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)"
+      />
+      <style>
+        .scroll-anim {
+          opacity: 0;
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
+          will-change: opacity, transform;
+        }
+        .scroll-anim[data-animate="fade-up"] {
+          transform: translateY(30px);
+        }
+        .scroll-anim[data-animate="zoom-in"] {
+          transform: scale(0.92);
+        }
+        .scroll-anim[data-animate="slide-left"] {
+          transform: translateX(-40px);
+        }
+        .scroll-anim[data-animate="slide-right"] {
+          transform: translateX(40px);
+        }
+        .scroll-anim[data-animate="bounce"] {
+          transform: scale(0.85);
+        }
+
+        .scroll-anim.animated {
+          opacity: 1;
+          transform: translateY(0) translateX(0) scale(1) !important;
+        }
+
+        .scroll-anim[data-animate="bounce"].animated {
+          animation: smoothBounce 0.7s ease-out forwards;
+        }
+
+        @keyframes smoothBounce {
+          0% {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          60% {
+            opacity: 1;
+            transform: scale(1.04);
+          }
+          85% {
+            transform: scale(0.98);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      </style>
+    </head>
+    <body
+      class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white px-3 sm:px-6 md:px-10 py-6 space-y-6"
+    >
+      ${bannerTopHTML}
+
+      <nav
+        class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-sm rounded-2xl"
+      >
+        <div
+          class="max-w-6xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between"
+        >
+          <a
+            href="#inicio"
+            class="nav-link text-xl font-black text-slate-900 flex items-center gap-2"
+          >
+            ${datos.nombre}
+          </a>
+
+          <div
+            class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600"
+          >
+            <a href="#inicio" class="nav-link hover:text-slate-900">Inicio</a>
+            <a href="#servicios" class="nav-link hover:text-slate-900"
+              >Servicios</a
+            >
+            ${linkHorarios} ${linkGaleria} ${linkRedes}
+            <a href="#contacto" class="nav-link hover:text-slate-900"
+              >Ubicación</a
+            >
+          </div>
+
+          <a
+            href="${waUrl}"
+            target="_blank"
+            class="hidden md:flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg text-xs md:text-sm transition-transform hover:scale-105"
+            style="background-color: ${datos.btnNavColor || '#25D366'}"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i> <span>WhatsApp</span>
+          </a>
+
+          <button
+            id="mobileMenuBtn"
+            type="button"
+            class="md:hidden text-slate-800 p-2 text-xl"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-4"
+        >
+          <a href="#inicio" class="nav-link block font-bold text-slate-700"
+            >Inicio</a
+          >
+          <a href="#servicios" class="nav-link block font-bold text-slate-700"
+            >Servicios</a
+          >
+          ${linkHorarios} ${linkGaleria} ${linkRedes}
+          <a href="#contacto" class="nav-link block font-bold text-slate-700"
+            >Ubicación</a
+          >
+          <div class="pt-2 border-t border-slate-100">
+            <a
+              href="${waUrl}"
+              target="_blank"
+              class="flex items-center justify-center gap-2 text-white font-bold px-5 py-3 rounded-xl shadow-md text-sm w-full"
+              style="background-color: ${datos.btnNavColor || '#25D366'}"
+            >
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <header
+        id="inicio"
+        ${getAnimData(datos.animHero)}
+        class="relative min-h-[580px] flex items-center justify-center px-6 md:px-12 py-24 bg-slate-900 overflow-hidden rounded-3xl"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            src="${datos.heroBgUrl}"
+            alt="Portada"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-slate-950/70 backdrop-blur-[2px]"
+          ></div>
+        </div>
+        <div
+          class="max-w-4xl mx-auto relative z-10 space-y-6 ${alignTextClass}"
+        >
+          <span
+            class="inline-block uppercase tracking-widest text-xs font-extrabold text-white bg-white/10 border border-white/20 px-4 py-1.5 rounded-full"
+            >${datos.categoria}</span
+          >
+          <h1
+            class="text-4xl md:text-6xl font-black leading-tight"
+            style="color: ${datos.colorTitle}"
+          >
+            ${datos.tituloHero}
+          </h1>
+          <p
+            class="text-base md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed"
+          >
+            ${datos.descripcion}
+          </p>
+          <div class="pt-8 pb-6 flex flex-wrap gap-4 ${datos.btnAlign}">
+            <a
+              href="${waUrl}"
+              target="_blank"
+              class="text-white font-extrabold px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-2 transition-transform hover:scale-105"
+              style="background-color: ${datos.btnHero1Color}"
+            >
+              ${renderIcon(datos.btnHero1Icon)}
+              <span>${datos.btnHero1Text}</span>
+            </a>
+            <a
+              href="#servicios"
+              class="nav-link text-white border border-white/30 backdrop-blur-md font-bold px-7 py-4 rounded-2xl flex items-center gap-2 transition-all hover:bg-white/10"
+              style="background-color: ${datos.btnHero2Color}"
+            >
+              <span>${datos.btnHero2Text}</span>
+              ${renderIcon(datos.btnHero2Icon)}
+            </a>
+          </div>
+        </div>
+      </header>
+
+      ${statsHTML}
+
+      <section
+        id="servicios"
+        ${getAnimData(datos.animServicios)}
+        class="max-w-6xl mx-auto px-6 md:px-12 py-16 md:py-20 my-8"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3"
+        >
+          ${datos.serviciosTitulo || 'Nuestros Servicios'}
+        </h2>
+        <p
+          class="text-center text-slate-500 text-sm mb-12 max-w-xl mx-auto leading-relaxed"
+        >
+          ${datos.serviciosSubtitulo || ''}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          ${tarjetasServicios}
+        </div>
+      </section>
+
+      ${horariosHTML} ${galeriaHTML} ${testimoniosHTML} ${faqHTML}
+      ${redesSeccionHTML}
+
+      <section
+        id="contacto"
+        class="bg-slate-100 py-20 px-6 md:px-12 my-12 border-t border-slate-200 rounded-3xl"
+      >
+        <div class="max-w-6xl mx-auto space-y-10">
+          <div
+            class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div class="space-y-4">
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200"
+                >Contacto</span
+              >
+              <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">
+                ${datos.nombre}
+              </h3>
+              <p class="text-sm text-slate-600 font-medium">
+                📍 ${datos.ubicacion} | 📞 ${datos.telefono}
+              </p>
+            </div>
+            <a
+              href="${waUrl}"
+              target="_blank"
+              class="text-white font-bold px-8 py-4 rounded-2xl shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
+              style="background-color: ${datos.btnNavColor || '#25D366'}"
+              ><i class="fa-brands fa-whatsapp text-lg"></i> Contactar por
+              WhatsApp</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 h-96"
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              frameborder="0"
+              src="${mapIframeUrl}"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="bg-slate-900 text-slate-400 py-12 px-6 md:px-12 text-center text-xs space-y-3 rounded-2xl"
+      >
+        <p class="font-semibold text-slate-300">
+          &copy; ${new Date().getFullYear()} ${datos.nombre}. Todos los derechos
+          reservados.
+        </p>
+        <p class="text-slate-500">
+          📍 ${datos.ubicacion} | 📞 ${datos.telefono}
+        </p>
+      </footer>
+
+      <div
+        id="galleryModal"
+        class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+      >
+        <button
+          id="closeModal"
+          class="absolute top-6 right-6 text-white text-3xl font-bold cursor-pointer"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img
+          id="modalImg"
+          src=""
+          class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+        />
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const elements = document.querySelectorAll(".scroll-anim");
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animated");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+
+          elements.forEach((el) => observer.observe(el));
+
+          const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener("click", function () {
+              mobileMenu.classList.toggle("hidden");
+            });
+          }
+
+          document.addEventListener("click", function (e) {
+            const link = e.target.closest(".nav-link");
+            if (link) {
+              const href = link.getAttribute("href");
+              if (href && href.startsWith("#")) {
+                e.preventDefault();
+                if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                  mobileMenu.classList.add("hidden");
+                }
+                const target = document.querySelector(href);
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }
+            }
+          });
+
+          const modal = document.getElementById("galleryModal");
+          const modalImg = document.getElementById("modalImg");
+          const closeModal = document.getElementById("closeModal");
+
+          document.querySelectorAll(".gallery-item").forEach((item) => {
+            item.addEventListener("click", function () {
+              const fullUrl = this.getAttribute("data-full");
+              if (modal && modalImg && fullUrl) {
+                modalImg.src = fullUrl;
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+              }
+            });
+          });
+
+          if (closeModal && modal) {
+            closeModal.addEventListener("click", function () {
+              modal.classList.add("hidden");
+              modal.classList.remove("flex");
+            });
+            modal.addEventListener("click", function (e) {
+              if (e.target === modal) {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+              }
+            });
+          }
+        });
+      </script>
+    </body>
+  </html>
+  `; }
+</section>
