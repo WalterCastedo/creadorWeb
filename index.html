@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CreadorWeb Pro v6 - Studio con Menú Hamburguesa Móvil</title>
+    <title>CreadorWeb Pro v10 Ultimate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link
@@ -14,13 +14,13 @@
   <body
     class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans overflow-x-hidden"
   >
-    <!-- Header / Barra Superior -->
+    <!-- Header Superior -->
     <header
-      class="bg-slate-800/95 backdrop-blur-md border-b border-slate-700 px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3 sticky top-0 z-50"
+      class="bg-slate-800 border-b border-slate-700 px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3 sticky top-0 z-50"
     >
       <div class="flex items-center gap-3">
         <div
-          class="bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 text-slate-950 p-2.5 rounded-xl font-black text-xl shadow-lg shadow-emerald-500/20"
+          class="bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-500 text-slate-950 p-2 rounded-xl font-black text-xl shadow-lg"
         >
           <i class="fa-solid fa-gem"></i>
         </div>
@@ -31,31 +31,31 @@
             CreadorWeb Pro
             <span
               class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-              >v6 Studio</span
+              >v10 Pro</span
             >
           </h1>
           <p class="text-[11px] sm:text-xs text-slate-400 hidden sm:block">
-            Menú Hamburguesa Móvil + Íconos FontAwesome 6 + Pestañas Móviles
+            Horarios Flexibles por Día, Lightbox Modal de Fotos & Navegación
+            Suave
           </p>
         </div>
       </div>
 
       <div class="flex items-center gap-2">
-        <!-- Selector de Pestañas para Móvil -->
         <div
           class="lg:hidden flex bg-slate-900 p-1 rounded-xl border border-slate-700"
         >
           <button
             type="button"
             id="tabEditor"
-            class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 flex items-center gap-1.5 transition-all"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-slate-950 flex items-center gap-1.5"
           >
             <i class="fa-solid fa-pen-to-square"></i> Editor
           </button>
           <button
             type="button"
             id="tabPreview"
-            class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5 transition-all"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"
           >
             <i class="fa-solid fa-eye"></i> Preview
           </button>
@@ -63,17 +63,16 @@
 
         <button
           id="btnExport"
-          class="hidden bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black px-4 sm:px-6 py-2.5 rounded-xl shadow-lg transition-all items-center gap-2 text-xs sm:text-sm"
+          class="hidden bg-emerald-500 text-slate-950 font-black px-4 py-2 rounded-xl text-xs"
         >
-          <i class="fa-solid fa-file-arrow-down text-base"></i>
-          <span class="hidden sm:inline">Descargar</span> index.html
+          Descargar index.html
         </button>
       </div>
     </header>
 
-    <!-- Layout Principal de Contenido -->
+    <!-- Content Layout -->
     <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-0 relative">
-      <!-- Panel 1: Editor -->
+      <!-- Panel Editor -->
       <section
         id="panelEditor"
         class="lg:col-span-5 bg-slate-800/40 p-4 sm:p-6 border-r border-slate-700/80 overflow-y-auto max-h-[calc(100vh-65px)] space-y-6 block"
@@ -83,7 +82,7 @@
           onsubmit="event.preventDefault()"
           class="space-y-6"
         >
-          <!-- Identidad y Menú Navbar -->
+          <!-- Identidad -->
           <div
             class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
           >
@@ -92,19 +91,17 @@
             >
               <i class="fa-solid fa-compass"></i> Menú Superior (Navbar)
             </h2>
-
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1"
-                >Nombre del Negocio / Marca</label
+                >Nombre del Negocio</label
               >
               <input
                 type="text"
                 id="nombre"
                 value="Napoletana Gourmet"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
               />
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-1"
@@ -114,7 +111,7 @@
                   type="text"
                   id="categoria"
                   value="Pizzería Artesanal"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
                 />
               </div>
               <div>
@@ -125,15 +122,13 @@
                   type="text"
                   id="telefono"
                   value="+591 70000000"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
                 />
               </div>
             </div>
-
-            <!-- Botón Navbar e Ícono -->
             <div class="space-y-2 pt-2 border-t border-slate-700/60">
               <label class="block text-xs font-semibold text-slate-300"
-                >Botón de Menú (CTA Navbar)</label
+                >Botón de Menú</label
               >
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <input
@@ -149,30 +144,24 @@
                   class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
                 />
               </div>
-              <div>
-                <label
-                  class="block text-[10px] font-semibold text-slate-400 mb-1"
-                  >Ícono del Botón del Menú</label
-                >
-                <select
-                  id="btnNavIcon"
-                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
-                >
-                  <option value="fa-brands fa-whatsapp">
-                    WhatsApp (Logo Verde)
-                  </option>
-                  <option value="fa-solid fa-phone">Teléfono (Llamada)</option>
-                  <option value="fa-solid fa-cart-shopping">
-                    Carrito de Compras
-                  </option>
-                  <option value="fa-solid fa-star">Estrella</option>
-                  <option value="none">Sin Ícono</option>
-                </select>
-              </div>
+              <select
+                id="btnNavIcon"
+                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
+              >
+                <option value="fa-brands fa-whatsapp">
+                  WhatsApp (Logo Verde)
+                </option>
+                <option value="fa-solid fa-phone">Teléfono (Llamada)</option>
+                <option value="fa-solid fa-cart-shopping">
+                  Carrito de Compras
+                </option>
+                <option value="fa-solid fa-star">Estrella</option>
+                <option value="none">Sin Ícono</option>
+              </select>
             </div>
           </div>
 
-          <!-- Portada (Hero) -->
+          <!-- Portada -->
           <div
             class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
           >
@@ -201,10 +190,9 @@
                 rows="2"
                 class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white"
               >
-Masa madre madurada 48 horas e ingredientes italianos.</textarea
+Masa madre madurada 48 horas e ingredientes italianos seleccionados.</textarea
               >
             </div>
-
             <div class="grid grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-semibold text-slate-300 mb-1"
@@ -233,95 +221,288 @@ Masa madre madurada 48 horas e ingredientes italianos.</textarea
                 </select>
               </div>
             </div>
+          </div>
 
-            <!-- Botón 1 Hero -->
-            <div class="space-y-2 pt-2 border-t border-slate-700/60">
-              <span class="text-[11px] font-bold text-slate-400 uppercase block"
-                >Botón Principal (CTA 1)</span
+          <!-- MÓDULO HORARIOS DE ATENCIÓN (Modo Rangos vs Día por Día) -->
+          <div
+            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
               >
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <i class="fa-solid fa-clock"></i> Módulo: Horarios de Atención
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
                 <input
-                  type="color"
-                  id="btnHero1Color"
-                  value="#e11d48"
-                  class="w-full h-8 bg-slate-900 border border-slate-700 rounded-lg p-1 cursor-pointer"
+                  type="checkbox"
+                  id="modHorariosActive"
+                  checked
+                  class="sr-only peer"
                 />
-                <input
-                  type="text"
-                  id="btnHero1Text"
-                  value="Ordenar Ahora"
-                  class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
-                />
-              </div>
-              <select
-                id="btnHero1Icon"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
-              >
-                <option value="fa-solid fa-fire">Fuego / Oferta</option>
-                <option value="fa-brands fa-whatsapp">WhatsApp</option>
-                <option value="fa-solid fa-bag-shopping">
-                  Bolsa de Compras
-                </option>
-                <option value="none">Sin Ícono</option>
-              </select>
+                <div
+                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
             </div>
 
-            <!-- Botón 2 Hero -->
-            <div class="space-y-2 pt-2 border-t border-slate-700/60">
-              <span class="text-[11px] font-bold text-slate-400 uppercase block"
-                >Botón Secundario (CTA 2)</span
-              >
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                <input
-                  type="color"
-                  id="btnHero2Color"
-                  value="#334155"
-                  class="w-full h-8 bg-slate-900 border border-slate-700 rounded-lg p-1 cursor-pointer"
-                />
-                <input
-                  type="text"
-                  id="btnHero2Text"
-                  value="Ver Servicios"
-                  class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
-                />
-              </div>
-              <select
-                id="btnHero2Icon"
-                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
-              >
-                <option value="fa-solid fa-chevron-down">Flecha Abajo</option>
-                <option value="fa-solid fa-list">Lista</option>
-                <option value="none">Sin Ícono</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 mb-1"
-                >Imagen de Fondo</label
-              >
-              <div class="flex gap-2">
-                <input
-                  type="text"
-                  id="heroBgUrl"
-                  value="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
-                  class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
-                />
-                <label
-                  class="bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold px-3 py-2 rounded-xl cursor-pointer flex items-center gap-1.5"
-                >
-                  <i class="fa-solid fa-upload"></i>
+            <div id="horariosConfig" class="space-y-3">
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-1"
+                    >Título de Sección</label
+                  >
                   <input
-                    type="file"
-                    id="heroBgFile"
-                    accept="image/*"
-                    class="hidden"
+                    type="text"
+                    id="horariosTitulo"
+                    value="Horarios de Atención"
+                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
                   />
-                </label>
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-semibold text-slate-300 mb-1"
+                    >Modo de Horario</label
+                  >
+                  <select
+                    id="horariosModo"
+                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-2 py-1.5 text-xs text-white"
+                  >
+                    <option value="rangos">Rangos (LV y SD)</option>
+                    <option value="diario">Detallado Día por Día</option>
+                  </select>
+                </div>
+              </div>
+
+              <div id="horariosRangosBox" class="space-y-2">
+                <div>
+                  <label class="block text-[10px] font-semibold text-slate-400"
+                    >Lunes a Viernes</label
+                  >
+                  <input
+                    type="text"
+                    id="horariosLV"
+                    value="11:30 AM - 23:00 PM"
+                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+                <div>
+                  <label class="block text-[10px] font-semibold text-slate-400"
+                    >Sábados y Domingos</label
+                  >
+                  <input
+                    type="text"
+                    id="horariosSD"
+                    value="12:00 PM - 00:00 AM"
+                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white"
+                  />
+                </div>
+              </div>
+
+              <div
+                id="horariosDiarioBox"
+                class="hidden space-y-2 pt-1 border-t border-slate-700/50"
+              >
+                <span
+                  class="text-[10px] font-bold text-emerald-400 uppercase block"
+                  >Configuración Día por Día</span
+                >
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div>
+                    <span class="text-[10px] text-slate-400">Lunes</span
+                    ><input
+                      type="text"
+                      id="h_lunes"
+                      value="11:30 AM - 22:00 PM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400">Martes</span
+                    ><input
+                      type="text"
+                      id="h_martes"
+                      value="11:30 AM - 22:00 PM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400">Miércoles</span
+                    ><input
+                      type="text"
+                      id="h_miercoles"
+                      value="11:30 AM - 22:00 PM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400">Jueves</span
+                    ><input
+                      type="text"
+                      id="h_jueves"
+                      value="11:30 AM - 23:00 PM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400">Viernes</span
+                    ><input
+                      type="text"
+                      id="h_viernes"
+                      value="11:30 AM - 00:00 AM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div>
+                    <span class="text-[10px] text-slate-400">Sábado</span
+                    ><input
+                      type="text"
+                      id="h_sabado"
+                      value="12:00 PM - 00:00 AM"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                  <div class="col-span-2">
+                    <span class="text-[10px] text-slate-400">Domingo</span
+                    ><input
+                      type="text"
+                      id="h_domingo"
+                      value="Cerrado"
+                      class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Estilos -->
+          <!-- MÓDULO GALERÍA DE FOTOS CON MODAL -->
+          <div
+            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-images"></i> Módulo: Galería de Fotos
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modGaleriaActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+            <div id="galeriaConfig" class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-slate-300 font-semibold"
+                  >Imágenes (Click abre visor Modal)</span
+                >
+                <button
+                  id="btnAddGaleriaImg"
+                  type="button"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                >
+                  + Foto
+                </button>
+              </div>
+              <div id="galeriaContainer" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <!-- MÓDULO TESTIMONIOS -->
+          <div
+            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-comments"></i> Módulo: Testimonios
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modTestimoniosActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+            <div id="testimoniosConfig" class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-slate-300 font-semibold"
+                  >Opiniones</span
+                >
+                <button
+                  id="btnAddTestimonio"
+                  type="button"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                >
+                  + Opinión
+                </button>
+              </div>
+              <div id="testimoniosContainer" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <!-- MÓDULO FAQ -->
+          <div
+            class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
+          >
+            <div
+              class="flex items-center justify-between border-b border-slate-700/80 pb-3"
+            >
+              <h2
+                class="text-xs font-extrabold uppercase text-emerald-400 flex items-center gap-2"
+              >
+                <i class="fa-solid fa-circle-question"></i> Módulo: FAQ
+              </h2>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="modFaqActive"
+                  checked
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-slate-700 peer-checked:bg-emerald-500 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 transition-all"
+                ></div>
+              </label>
+            </div>
+            <div id="faqConfig" class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-slate-300 font-semibold"
+                  >Preguntas</span
+                >
+                <button
+                  id="btnAddFaq"
+                  type="button"
+                  class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-lg"
+                >
+                  + Pregunta
+                </button>
+              </div>
+              <div id="faqContainer" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <!-- Estilos Visuales -->
           <div
             class="bg-slate-800 p-4 sm:p-5 rounded-2xl border border-slate-700/80 space-y-4"
           >
@@ -428,10 +609,10 @@ Masa madre madurada 48 horas e ingredientes italianos.</textarea
         </form>
       </section>
 
-      <!-- Panel 2: Previsualizador -->
+      <!-- Panel Previsualizador -->
       <section
         id="panelPreview"
-        class="hidden lg:flex lg:col-span-7 bg-slate-950 p-3 sm:p-6 flex-col items-center overflow-y-auto max-h-[calc(100vh-65px)] w-full"
+        class="hidden lg:flex lg:col-span-7 bg-slate-950 p-3 sm:p-6 flex-col items-center min-h-[600px] w-full"
       >
         <div
           class="w-full max-w-5xl bg-slate-800 px-4 py-3 rounded-t-2xl border border-slate-700 border-b-0 flex flex-wrap items-center justify-between gap-3 text-xs"
@@ -473,11 +654,11 @@ Masa madre madurada 48 horas e ingredientes italianos.</textarea
 
         <div
           id="previewWrapper"
-          class="w-full max-w-5xl h-[650px] lg:h-full bg-slate-900 rounded-b-2xl border border-slate-800 overflow-hidden shadow-2xl transition-all duration-300 flex justify-center"
+          class="w-full max-w-5xl h-[650px] lg:h-[calc(100vh-140px)] bg-slate-900 rounded-b-2xl border border-slate-800 overflow-hidden shadow-2xl transition-all duration-300 flex justify-center"
         >
           <iframe
             id="previewFrame"
-            class="w-full h-full border-0 bg-white transition-all duration-300"
+            class="w-full h-full border-0 bg-white"
           ></iframe>
         </div>
       </section>
